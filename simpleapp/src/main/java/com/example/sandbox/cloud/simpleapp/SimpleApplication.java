@@ -23,11 +23,11 @@ public class SimpleApplication {
     }
 
     @Autowired
-    private SimpleApplicationConfig simpleApplicationConfig;
+    private final SimpleApplicationConfig simpleApplicationConfig;
 
     @GetMapping
     public String getDefault() {
-        return "Hello from simple application - no param";
+        return "Hello from simple application - no params";
     }
 
     @GetMapping(value = "/{path}")

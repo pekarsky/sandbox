@@ -12,7 +12,7 @@ import org.springframework.core.env.Environment;
 public class KubernetesConfig implements SimpleApplicationConfig {
 
     @Autowired
-    private Environment env;
+    private final Environment env;
 
     @Override
     public String getVariable(String variableName) {
