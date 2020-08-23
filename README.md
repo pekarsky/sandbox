@@ -7,4 +7,6 @@ Just a bunch of different projects, created during S..r interview preparation - 
 
 NB: it is just prototyping. I know, that put spring boot application, configuration and controller to a single class is a bad idea.
 
-
+ongoing questions:
+- how to redeploy application without changing version?
+- how to get next random endpoint from discoveryClient?

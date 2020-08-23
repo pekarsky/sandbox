@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: sandbox-frontend-app
-          image: sergiipekarskyi/sandbox-frontend:v19
+          image: sergiipekarskyi/sandbox-frontend:v20
           ports:
             - containerPort: 8080
               protocol: TCP
           env:
             - name: application.frontend.variable_name
-              value: Frontent App variable value 8
+              value: Frontent App variable value
