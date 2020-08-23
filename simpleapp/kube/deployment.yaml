@@ -35,3 +35,8 @@ spec:
                 configMapKeyRef:
                   name: simpleapp-config
                   key: property.from.configmaps.application.properties
+            - name: spring.datasource.password
+              valueFrom:
+                secretKeyRef:
+                  name: simpleapp-secret
+                  key: password
