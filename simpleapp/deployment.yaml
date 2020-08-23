@@ -21,13 +21,17 @@ spec:
           env:
             - name: property.from.deployment.yaml
               value: This property was set via deployment.yaml
+            - name: pod.ip
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
             - name: spring.datasource.url
               valueFrom:
                 configMapKeyRef:
-                  name: simpleapp-configmap
+                  name: simpleapp-config
                   key: spring.datasource.url
             - name: property.from.configmaps.application.properties
               valueFrom:
                 configMapKeyRef:
-                  name: simpleapp-configmap
+                  name: simpleapp-config
                   key: property.from.configmaps.application.properties
