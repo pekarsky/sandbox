@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandbox-frontend-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sandbox-frontend-app
+  template:
+    metadata:
+      labels:
+        app: sandbox-frontend-app
+    spec:
+      containers:
+        - name: sandbox-frontend-app
+          image: sergiipekarskyi/sandbox-frontend:v19
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: application.frontend.variable_name
+              value: Frontent App variable value 8

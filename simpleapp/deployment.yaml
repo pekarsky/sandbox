@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sandbox-simple-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sandbox-simple-app
+  template:
+    metadata:
+      labels:
+        app: sandbox-simple-app
+    spec:
+      containers:
+        - name: sandbox-simple-app
+          image: sergiipekarskyi/sandbox-simpleapp:v6
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: property.from.deployment.yaml
+              value: This property was set via deployment.yaml
+            - name: spring.datasource.url
+              valueFrom:
+                configMapKeyRef:
+                  name: simpleapp-configmap
+                  key: spring.datasource.url
+            - name: property.from.configmaps.application.properties
+              valueFrom:
+                configMapKeyRef:
+                  name: simpleapp-configmap
+                  key: property.from.configmaps.application.properties

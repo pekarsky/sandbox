@@ -1,5 +1,5 @@
-package com.example.sandbox.cloud.simpleapp;
+package com.example.sandbox.cloud.simpleapp.config;
 
-public interface ApplicationConfig {
+public interface SimpleApplicationConfig {
     String getVariable(String variableName);
 }

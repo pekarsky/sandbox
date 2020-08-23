@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web
+  namespace: default
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: sandbox-frontend-svc
+              servicePort: 80
+          - path: /props
+            backend:
+              serviceName: sandbox-properties-svc
+              servicePort: 80
+          - path: /simple
+            backend:
+              serviceName: sandbox-simpleapp-svc
+              servicePort: 80
